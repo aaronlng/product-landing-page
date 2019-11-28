@@ -4,32 +4,39 @@
 
 .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: .5fr repeat(3, 1fr) .5fr; 
+    grid-template-columns: 1fr;
+    grid-template-rows: .5fr repeat(4, 1fr) .5fr;
     grid-template-areas:
-    "header header header"
-    ". video ."
-    "about about about"
-    "reviews reviews contact"
-    "footer footer footer";
+        "header"
+        "video"
+        "about"
+        "reviews"
+        "contact"
+        "footer";
 }
 
 /* navigation */
 
 header {
     grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr .5fr;
+    grid-template-areas:
+        "logo"
+        "nav";
 }
 
 
 img {
     grid-area: logo;
     max-width: 100%;
-    display: block;
     height: auto;
+    justify-self: center;
 }
 
 .header-nav ul,
-.footer-nav  ul {
+.footer-nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -40,6 +47,29 @@ img {
 .footer-nav li {
     display: inline;
 }
+
+.header-nav {
+    grid-area: nav;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2em;
+    /* padding-bottom: 20px;
+    padding-right: 20px; */
+    justify-self: center;
+    align-self: center;
+}
+
+.header-nav a,
+.footer-nav a {
+    text-decoration: none;
+    color: #8A25B1;
+    /* margin-right: 20px; */
+}
+
+.header-nav a:hover {
+    color: #b974d4;
+    border-bottom: 5px solid #b974d4;
+}
+
 
 /* demo */
 
@@ -52,7 +82,7 @@ img {
 
 #about {
     grid-area: about;
-    background: #8A25B1;
+    background: #df92fc;
 }
 
 /* reviews */
@@ -68,10 +98,130 @@ img {
     grid-area: contact;
     background: rgb(59, 5, 80);
 }
+
 /* footer */
 
 #footer {
     grid-area: footer;
     font-size: .75em;
-    background: #8A25B1;
+    background: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.footer-nav {
+    align-self: center;
+    justify-self: center;
+}
+
+@media screen and (min-width: 800px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: .5fr repeat(3, 1fr) .5fr;
+        grid-template-areas:
+            "header header header"
+            ". video ."
+            "about about about"
+            "reviews reviews contact"
+            "footer footer footer";
+    }
+
+    /* navigation */
+
+    header {
+        grid-area: header;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "logo nav nav";
+    }
+
+
+    img {
+        max-width: 100%;
+        height: auto;
+        justify-self: center;
+    }
+
+    .header-nav ul,
+    .footer-nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .header-nav li,
+    .footer-nav li {
+        display: inline;
+    }
+
+    .header-nav {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 3em;
+        padding-bottom: 20px;
+        padding-right: 20px;
+        justify-self: end;
+        align-self: end;
+    }
+
+    .header-nav a,
+    .footer-nav a {
+        text-decoration: none;
+        color: #8A25B1;
+        margin-right: 20px;
+    }
+
+    .header-nav a:hover {
+        color: #b974d4;
+        border-bottom: 5px solid #b974d4;
+    }
+
+
+    /* demo */
+
+    #demo {
+        grid-area: video;
+        background: #8A25B1;
+    }
+
+    /* about */
+
+    #about {
+        grid-area: about;
+        background: #df92fc;
+    }
+
+    /* reviews */
+
+    #reviews {
+        grid-area: reviews;
+        background: #654272;
+    }
+
+    /* contact */
+
+    #contact {
+        grid-area: contact;
+        background: rgb(59, 5, 80);
+    }
+
+    /* footer */
+
+    #footer {
+        grid-area: footer;
+        font-size: .75em;
+        background: #ffffff;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .footer-nav {
+        align-self: center;
+        justify-self: center;
+    }
 }
