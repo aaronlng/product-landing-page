@@ -5,12 +5,13 @@
 .container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr repeat(4, 1fr) 0.5fr;
+    grid-template-rows: 0.5fr repeat(5, 1fr) 0.5fr;
     grid-template-areas:
         "header"
         "video"
         "about"
         "reviews"
+        "signup"
         "contact"
         "footer";
 }
@@ -92,6 +93,41 @@ img {
 #reviews {
     grid-area: reviews;
     background: #654272;
+}
+
+/* signup */
+
+#signup {
+    grid-area: signup;
+    border: 5px double #8a25b1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 25% 75%;
+    justify-items: center;
+    align-items: start;
+}
+
+#signup h2 {
+    color: #8a25b1;
+}
+
+#form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "email"
+    "submit";
+}
+
+#signup fieldset {
+    grid-area: email;
+    border: none;
+}
+
+#submit {
+    grid-area: submit;
+    justify-self: center;
 }
 
 /* contact */
