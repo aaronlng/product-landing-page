@@ -299,7 +299,12 @@ img {
         background: #ffffff;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    #footer p {
+        color: #8a25b1;
+        justify-self: center;
     }
 
     .footer-nav {
