@@ -4,16 +4,16 @@
 
 .container {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr repeat(4, 1fr) auto 0.5fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto repeat(3, 1fr) auto auto auto;
     grid-template-areas:
-        "header"
-        "video"
-        "about"
-        "reviews"
-        "signup"
-        "contact"
-        "footer";
+        "header header"
+        "video video"
+        "about about"
+        "reviews reviews"
+        "signup signup"
+        "contact footer";
+    gap: 5px;
 }
 
 /* navigation */
@@ -105,29 +105,34 @@ img {
     grid-area: signup;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 25% 75%;
-    justify-items: center;
-    align-items: start;
+    grid-template-rows: 1fr 1fr;
 }
 
 #signup h2 {
     color: #8a25b1;
     text-decoration: underline;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    margin: 0;
+    padding: 0;
 }
 
 #form {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto 1fr;
     grid-template-areas:
         "email"
         "submit";
     align-self: center;
+    justify-items: center;
 }
 
 #signup fieldset {
     grid-area: email;
     border: none;
+    color: #8a25b1;
 }
 
 #submit {
@@ -137,6 +142,14 @@ img {
     color: #ffffff;
     text-align: center;
     border: none;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+#submit:hover {
+    background: #3b0550;
+    cursor: pointer;
+    border: none; 
 }
 
 /* contact */
@@ -151,26 +164,19 @@ img {
 }
 
 #contact button {
-    background-color: #ffffff;
-    border: 5px solid #8a25b1;
-    color: #8a25b1;
-    text-align: center;
-    text-decoration: none;
-}
-#contact a {
+    background-color: #8a25b1;
+    border: none;
+    padding: 10px 30px;
+    margin: 10px 0px 10px 0px;
     font-size: 1.5em;
     text-align: center;
-    color: #8a25b1;
+    color: #ffffff;
     text-decoration: none;
-    padding: 20px 40px;
-}
-
-#contact a:hover {
-    color: #3b0550;
 }
 
 #contact button:hover {
-    border: 5px solid #3b0550;
+    background: #3b0550;
+    cursor: pointer;
 }
 
 /* footer */
@@ -186,14 +192,14 @@ img {
 
 #footer p {
     color: #8a25b1;
-    justify-self: center;
+    justify-self: end;
     align-self: center;
     margin: 0;
 }
 
 .footer-nav {
     align-self: end;
-    justify-self: center;
+    justify-self: end;
 }
 
 .footer-nav a:hover {
