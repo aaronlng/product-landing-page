@@ -96,7 +96,14 @@ img {
 
 #reviews {
     grid-area: reviews;
-    background: #654272;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    column-gap: 5px;
+}
+
+.reviews {
+    border: 5px double #654272;
 }
 
 /* signup */
@@ -198,6 +205,7 @@ img {
 }
 
 .footer-nav {
+    display: inline-block;
     align-self: end;
     justify-self: end;
 }
