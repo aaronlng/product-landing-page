@@ -5,10 +5,9 @@
 .container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto repeat(3, 1fr) auto auto;
+    grid-template-rows: auto repeat(3, 1fr) auto auto;
     grid-template-areas:
         "header"
-        "nav"
         "video"
         "about"
         "reviews"
@@ -21,10 +20,22 @@
 
 header {
     grid-area: header;
-    justify-self: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        "image"
+        "nav";
+    justify-items: center;
+    background: #ffffff;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 2
 }
 
 img {
+    grid-area: image;
     max-width: 100%;
     height: auto;
 }
@@ -39,12 +50,12 @@ img {
     align-self: center;
 }
 
-nav {
-    position: -webkit-sticky; /* Safari */
+/* nav {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 2
-}
+} */
 
 .header-nav ul,
 .footer-nav ul {
@@ -242,7 +253,7 @@ nav {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto 1fr 1fr auto;
         grid-template-areas:
-            "header nav"
+            "header header"
             "video video"
             "about email"
             "reviews reviews"
@@ -253,11 +264,11 @@ nav {
 
     header {
         grid-area: header;
-        justify-self: start;
-        align-self: center;
     }
 
     img {
+        grid-area: image;
+        justify-self: start;
         max-width: 100%;
         height: auto;
     }
