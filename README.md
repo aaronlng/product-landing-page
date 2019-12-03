@@ -2,7 +2,7 @@
 
 ## Demo
 
-![]()
+![Product Landing Page Demo](assets/images/demo.gif)
 
 ## Author
 
