@@ -40,8 +40,7 @@ img {
 }
 
 nav {
-    position: -webkit-sticky;
-    /* Safari */
+    position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
     z-index: 2
@@ -84,14 +83,14 @@ nav {
     border-bottom: 5px solid #b974d4;
 }
 
-/* demo */
+/* Video */
 
 #demo {
     grid-area: video;
     background: #ffffff;
 }
 
-/* about */
+/* About */
 
 #about {
     grid-area: about;
@@ -104,7 +103,7 @@ nav {
     text-decoration: underline;
 }
 
-/* reviews */
+/* Reviews */
 
 #reviews {
     grid-area: reviews;
@@ -118,7 +117,7 @@ nav {
     border: 5px double #654272;
 }
 
-/* signup */
+/* Signup */
 
 #signup {
     grid-area: signup;
@@ -171,7 +170,7 @@ nav {
     border: none;
 }
 
-/* footer */
+/* Footer */
 
 #footer {
     grid-area: footer;
@@ -185,7 +184,7 @@ nav {
         "contact copy";
 }
 
-/* contact */
+/* Contact */
 
 #contact {
     grid-area: contact;
@@ -235,35 +234,35 @@ nav {
     border-bottom: 5px solid #b974d4;
 }
 
+/* Desktop Media Query */
+
 @media screen and (min-width: 800px) {
     .container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 0.5fr 2fr repeat(2, 1fr) 0.5fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto 1fr 1fr auto;
         grid-template-areas:
-            "header header header"
-            "video video video"
-            "about about email"
-            "reviews reviews contact"
-            "footer footer footer";
+            "header nav"
+            "video video"
+            "about email"
+            "reviews reviews"
+            "contact footer";
     }
 
-    /* navigation */
+    /* Header Image */
 
     header {
         grid-area: header;
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: 1fr;
-        grid-template-areas: "logo nav nav";
+        justify-self: start;
+        align-self: center;
     }
 
     img {
         max-width: 100%;
         height: auto;
-        justify-self: center;
     }
 
+    /* Navigation */
     .header-nav ul,
     .footer-nav ul {
         list-style-type: none;
@@ -298,40 +297,40 @@ nav {
         border-bottom: 5px solid #b974d4;
     }
 
-    /* demo */
+    /* Video */
 
     #demo {
         grid-area: video;
         background: #8a25b1;
     }
 
-    /* about */
+    /* About */
 
     #about {
         grid-area: about;
     }
 
-    /* email signup */
+    /* Signup */
 
     #signup {
         grid-area: email;
     }
 
-    /* reviews */
+    /* Reviews */
 
     #reviews {
         grid-area: reviews;
         background: #654272;
     }
 
-    /* contact */
+    /* Contact */
 
     #contact {
         grid-area: contact;
         background: rgb(59, 5, 80);
     }
 
-    /* footer */
+    /* Footer */
 
     #footer {
         grid-area: footer;
