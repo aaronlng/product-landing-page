@@ -361,6 +361,38 @@ img {
         grid-area: reviews;
     }
 
+    .reviews {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "head"
+            "body";
+    }
+
+    .reviews h2 {
+        grid-area: head;
+        justify-self: center;
+        align-self: center;
+        color: #8a25b1;
+    }
+
+    .reviews h4 {
+        grid-area: head;
+        justify-self: center;
+        align-self: end;
+        margin: 0;
+        color: #8a25b1;
+    }
+
+    .reviews p {
+        grid-area: body;
+        text-align: center;
+        align-self: start;
+        color: #8a25b1;
+    }
+
+
     /* Contact */
 
     #contact {
