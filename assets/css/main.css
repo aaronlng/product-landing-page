@@ -5,15 +5,15 @@
 .container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto repeat(3, 1fr) auto auto;
+    grid-template-rows: auto 1fr auto auto auto auto;
     grid-template-areas:
         "header"
-        "about"
         "video"
+        "about"
         "reviews"
         "signup"
         "footer";
-    gap: 5px;
+    gap: 20px;
 }
 
 /* Header Image */
@@ -113,10 +113,6 @@ img {
     background: #ffffff;
     color: #8a25b1;
     text-align: center;
-}
-
-#about h2 {
-    text-decoration: underline;
 }
 
 /* Reviews */
@@ -300,6 +296,11 @@ img {
 
     header {
         grid-area: header;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "image nav";
     }
 
     img {
